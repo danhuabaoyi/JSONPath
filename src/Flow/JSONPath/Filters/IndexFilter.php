@@ -17,6 +17,8 @@ class IndexFilter extends AbstractFilter
             ];
         } else if ($this->token->value === "*") {
             return AccessHelper::arrayValues($collection);
+        } else if ($this->token->value === "length"){
+            return [count($collection)];
         }
 
         return [];
